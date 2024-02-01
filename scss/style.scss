@@ -23,7 +23,7 @@ $squareWidth: 200px;
     width: $squareWidth;
     height: $squareWidth;
     background-color: rgb(167, 252, 40);
-    transition: all 1s ease-out;
+    transition: all 1s ease-in;
     @include relativeCenter();
     &__triangle{
         width: 0;
@@ -49,6 +49,7 @@ $squareWidth: 200px;
         }
     }
     input {
+        position: absolute;
         width: 100%;
         height: 100%;
         left: 0;
@@ -79,7 +80,7 @@ $squareWidth: 200px;
 
 @keyframes around {
     0% {
-        border-radius: 0%;
+        border-radius: 0;
     }
     25% {
         border-radius: 25%;
@@ -91,6 +92,6 @@ $squareWidth: 200px;
         border-radius: 75%;
     }
     100% {
-        border-radius: 100%;
+        border-radius: 0%;
     }
 }
