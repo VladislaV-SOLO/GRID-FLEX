@@ -6,7 +6,7 @@
 body {
     height: 100vh;
 }
-$squareWidth: 200px;
+$squareWidth: 100px;
 
 @mixin translate($posX: -50%, $posY: -50%, $deg: 0) {
     transform: translate($posX, $posY) rotate($deg + deg);
@@ -16,7 +16,7 @@ $squareWidth: 200px;
     position: relative;
     top: $posX;
     left: $posY;
-    transform: translate();
+    @include translate();
 }
 
 .square {
@@ -28,9 +28,9 @@ $squareWidth: 200px;
     &__triangle{
         width: 0;
         height: 0;
-        border-left: 100px solid transparent;
-        border-right: 100px solid transparent;
-        border-bottom: 200px solid aqua;
+        border-left: $squareWidth / 2 solid transparent;
+        border-right: $squareWidth / 2 solid transparent;
+        border-bottom: $squareWidth solid aqua;
         position: absolute;
         top: 0;
         left: 0;
@@ -58,10 +58,10 @@ $squareWidth: 200px;
         z-index: 1;
     }
     &:has(input:checked) {
-        background-color: rgb(167, 252, 40);
-        animation: around 1s normal infinite linear;
+        background-color: aqua;
+        animation: around 2s infinite linear;
         .square__triangle {
-            border-bottom: 200px solid aqua;
+            border-bottom: $squareWidth solid aqua;
             &_top {
                 @include translate(0, -100%, 0);
             }
@@ -81,17 +81,22 @@ $squareWidth: 200px;
 @keyframes around {
     0% {
         border-radius: 0;
+        @include translate(-50%, -50%, 0)
     }
     25% {
         border-radius: 25%;
+        @include translate(-50%, -50%, 90)
     }
     50% {
         border-radius: 50%;
+        @include translate(-50%, -50%, 180)
     }
     75% {
-        border-radius: 75%;
+        border-radius: 25%;
+        @include translate(-50%, -50%, 270)
     }
     100% {
         border-radius: 0%;
+        @include translate(-50%, -50%, 360)
     }
 }
