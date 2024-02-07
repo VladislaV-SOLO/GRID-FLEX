@@ -6,6 +6,7 @@
 body {
     height: 100vh;
 }
+h2{text-align: center;}
 .grid {
     display: grid;
     gap: 10px;
@@ -59,3 +60,58 @@ body {
         grid-area: 3 / 6 / 4 / 7;
     }
 }
+// .flex-container {
+//     width: 100%;
+//     height: auto;
+// }
+.blocks {
+    display: flex;
+}
+.block {
+    width: 100%;
+    height: 80px;
+
+    &1 {
+        background-color: antiquewhite;
+        
+    }
+    &2 {
+        background-color: aquamarine;
+        
+    }
+    &3 {
+        background-color: royalblue;
+        
+    }
+    &4 {
+        background-color: yellowgreen;
+        
+    }
+    &5 {
+        background-color: indianred;
+    }
+    &6 {
+        background-color: plum;
+       
+    }
+    &7 {
+        background-color: red;
+        
+    }
+    &8 {
+        background-color: blue;       
+    }
+    &9 {
+        background-color: blueviolet;
+       
+    }
+    &10 {
+        background-color: gold;
+        
+    }
+    &11 {
+        background-color: greenyellow;
+        
+    }
+}
+   
